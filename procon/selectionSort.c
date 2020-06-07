@@ -14,7 +14,8 @@ void selectionSort(int A[], int N) {
         int temp = A[i];
         A[i] = A[minj];
         A[minj] = temp;
-        n++;
+        /* minj=iのままだったら、実質入れ替えてない */
+        if (i != minj) n++;
     }
     
     /* ソート後の数列とスワップ回数を出力 */
